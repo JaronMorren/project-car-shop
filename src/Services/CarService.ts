@@ -12,8 +12,26 @@ class CarService {
 
   public async createCar(car: ICar) {
     const carODM = new CarODM();
-    const newCar = await carODM.create(car);
+    const newCar = await carODM.createCar(car);
     return this.createCarDomain(newCar);
+  }
+  public async getAllCars() {
+    const carODM = new CarODM();
+    const cars = await carODM.getAllCars();
+    const carDomain = cars.map((car) => { 
+      const newCar = new Car(car);
+      return newCar;
+    });
+    return carDomain;
+  }
+
+  public async getCarByID(id: string) {
+    const carODM = new CarODM();
+    const car = await carODM.getCarByID(id);
+    if (car) {
+      return new Car(car);
+    }
+    return null;
   }
 }
 export default CarService;
