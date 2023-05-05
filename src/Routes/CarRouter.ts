@@ -17,4 +17,9 @@ carRouter.get(
   '/:id',
   (request, response, next) => new CarController(request, response, next).getCarByID(),
 );
+
+carRouter.put(
+  '/:id',
+  (request, response, next) => new CarController(request, response, next).updateCar(),
+);
 export default carRouter;
