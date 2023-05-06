@@ -12,19 +12,19 @@ abstract class AbstractODM<T> {
     this.model = models[this.modelName] || model(modelName, this.schema);
   }
   
-  public async createCar(obj: T): Promise<T> {
+  public async createVehicle(obj: T): Promise<T> {
     return this.model.create({ ...obj });
   }
   
-  public async getAllCars(): Promise<T[]> {
+  public async getAllVehicles(): Promise<T[]> {
     return this.model.find();
   }
 
-  public async getCarByID(id: string): Promise<T | null> {
+  public async getVehicleByID(id: string): Promise<T | null> {
     if (!isValidObjectId(id)) throw Error('Invalid mongo id');
     return this.model.findById(id);
   }
-  public async updateCar(id: string, obj: Partial<T>):
+  public async updateVehicle(id: string, obj: Partial<T>):
   Promise<T | null> {
     if (!isValidObjectId(id)) throw Error('Invalid mongo id');
 
