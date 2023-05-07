@@ -9,7 +9,6 @@ class CarService {
     }
     return null;
   }
-
   public async createCar(car: ICar) {
     const carODM = new CarODM();
     const newCar = await carODM.createVehicle(car);
@@ -24,7 +23,6 @@ class CarService {
     });
     return carDomain;
   }
-
   public async getCarByID(id: string) {
     const carODM = new CarODM();
     const car = await carODM.getVehicleByID(id);
