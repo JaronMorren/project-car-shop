@@ -17,4 +17,9 @@ motorcycleRouter.get(
   (request, response, next) => new MotorcycleController(request, response, next).getMotorcycleByID()
   ,
 );
+motorcycleRouter.put(
+  '/:id', 
+  (request, response, next) => new MotorcycleController(request, response, next).updateMotorcycle()
+  ,
+);
 export default motorcycleRouter;
