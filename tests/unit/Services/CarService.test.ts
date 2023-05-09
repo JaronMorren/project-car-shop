@@ -4,7 +4,7 @@ import { Model } from 'mongoose';
 import ICar from '../../../src/Interfaces/ICar';
 import CarService from '../../../src/Services/CarService';
 
-describe('Test the CarService layer', function () {
+describe('Test the Car Service layer', function () {
   it('if a new car can be created successfully', async function () {
     // Arrange
     const request: ICar = {
